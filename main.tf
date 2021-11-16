@@ -42,7 +42,7 @@ resource "aws_sfn_state_machine" "this" {
   tags = merge({ Name = var.name }, var.tags)
 
   lifecycle {
-    ignore_change = [
+    ignore_changes = [
       # Function definition controlled by CircleCI deployment script
       definition,
     ]
